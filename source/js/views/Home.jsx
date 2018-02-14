@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { increment, decrement } from 'actions/app';
+import { increment, decrement, saveNumber } from 'actions/app';
 
+import SaveButton from 'components/SaveButton';
+
+// mapStateToProps
 @connect(state => ({
   counter: state.app.get('counter'),
 }))
@@ -21,6 +24,11 @@ export default class Home extends Component {
   handleDecrement = () => {
     const { dispatch } = this.props;
     dispatch(decrement());
+  }
+
+  handleSaveNumber = () => {
+    const { dispatch, counter } = this.props;
+
   }
 
   render() {

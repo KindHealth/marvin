@@ -3,10 +3,12 @@ import { Map } from 'immutable';
 import {
   INCREMENT,
   DECREMENT,
+  SAVE_NUMBER,
 } from 'actions/app';
 
 const initialState = Map({
   counter: 0,
+  numbers: [],
 });
 
 const actionsMap = {
@@ -22,6 +24,12 @@ const actionsMap = {
 
     return state.merge(Map({
       counter,
+    }));
+  },
+  [SAVE_NUMBER]: (state, action) => {
+
+    return state.merge(Map({
+      numbers,
     }));
   },
 };
